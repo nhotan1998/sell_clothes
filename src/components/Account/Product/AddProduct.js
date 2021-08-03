@@ -23,7 +23,8 @@ class AddProduct extends Component{
             GetCategory:'',
             getToken:userData.success.token,
             formErrors:{},
-            data:''
+            data:'',
+            msg:''
 
         }
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -167,6 +168,9 @@ class AddProduct extends Component{
             axios.post(url,formData,config)
             .then(res=>{
                 console.log(res);
+                this.setState({
+                    msg:'Thêm Thành Công'
+                })
             })
             .catch(function(error){
                 console.log(error);
@@ -226,6 +230,7 @@ class AddProduct extends Component{
                     <h2>Create product!</h2>
                     <p style={{color:'red'}}>{this.state.note}</p>
                     <p style={{color:'red'}}>{this.state.alert}</p>
+                    <p style={{color: "green"}}>{this.state.msg}</p>
                     <ErrorForm  formErrors={this.state.formErrors} />
                     <form onSubmit={this.handleSubmit}>
                         <input type="text" placeholder="Name" name="name"  onChange={this.handleUserInput}/>

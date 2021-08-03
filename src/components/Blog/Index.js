@@ -57,7 +57,7 @@ class Index extends Component{
                 )
             })
           }
-      }
+      } 
     render(){
         return(
           <div className='container'>
@@ -74,3 +74,5 @@ class Index extends Component{
     }
 }
 export default Index;
+
+
